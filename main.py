@@ -2,6 +2,12 @@ import discord
 from discord.ext import commands
 import random
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path='./token.env')
+
+
 client = commands.Bot(command_prefix='moyai ')  # creates instance of a bot with prefix
 
 
@@ -35,5 +41,5 @@ async def give(ctx, *, statement):  # * allows you to take multiple arguments
                  ':moyai:']
     await ctx.send(f'You just said: {statement}\n And for that I will give you: {random.choice(responses)}')
 
+client.run(os.getenv("TOKEN"))
 
-client.run('ODA3NjYyMDYyOTc2NDk5NzYy.YB7P6Q.oSLuicqEHbPziyzg4wANIzfKN64')
