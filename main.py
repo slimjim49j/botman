@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+import math
 
 import os
 from dotenv import load_dotenv
@@ -62,12 +63,12 @@ async def rain(ctx):
     if not emojis:
         emojis = await get_moyai_emojis()
 
-    message = "Make it raaaaiin!!!\n"
-    for i in range(5):
+    await ctx.send("Make it raaaaiin!!!\n")
+    for i in range(10):
+        message = ""
         for j in range(10):
-            message += f'{random.choice(emojis)} '
-        message += "\n"
-    await ctx.send(message)
+            message += f'{random.choice(emojis)}' + (math.floor(random.random() * 100) * " ")
+        await ctx.send(message)
 
 client.run(os.getenv("TOKEN"))
 
