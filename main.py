@@ -55,5 +55,19 @@ async def give(ctx, *, statement):  # * allows you to take multiple arguments
 
     await ctx.send(f'You just said: {statement}\n And for that I will give you: {random.choice(emojis)}')
 
+
+@client.command(aliases=['make-it-rain'])
+async def rain(ctx):
+    global emojis
+    if not emojis:
+        emojis = await get_moyai_emojis()
+
+    message = "Make it raaaaiin!!!\n"
+    for i in range(5):
+        for j in range(10):
+            message += f'{random.choice(emojis)} '
+        message += "\n"
+    await ctx.send(message)
+
 client.run(os.getenv("TOKEN"))
 
