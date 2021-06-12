@@ -1,5 +1,8 @@
 # Mythical Moyai
 
+## Update / Install Dependencies
+[Dependencies are contained in requirements.txt](https://stackoverflow.com/questions/33751214/single-command-in-python-to-install-relevant-modules-from-a-package-json-like-fi)
+
 ## Combatant
 - health
 - attack
