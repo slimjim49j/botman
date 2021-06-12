@@ -53,6 +53,11 @@ async def setFavorite(ctx):
 
     # insert values of userID and emoji as a pair in to table
     # note: favMoyTable consists of two columns: bigInt userID and bigInt favMoy
+    # CREATE TABLE favMoyTable(
+    # userID BIGINT PRIMARY KEY,
+    # favMoy BIGINT(50)
+    # )
+
     cur.execute(
         f"INSERT INTO favMoyTable (userID, favMoy) VALUES({newUserID}, {newFavEmoji});")
 
